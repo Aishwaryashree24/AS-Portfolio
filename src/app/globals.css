@@ -25,3 +25,8 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face{
+  font-family: "burtons";
+  src: url("./fonts/Burtons.otf");
+}
