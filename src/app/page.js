@@ -1,4 +1,4 @@
-//'use client'; // Ensures this component is rendered on the client
+'use client'; // useState only works in a client component. so it is advisable to include it
 
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
 import {AiFillTwitterCircle, AiFillLinkedin, AiFillInstagram} from "react-icons/ai";
@@ -7,18 +7,30 @@ import aishu from "./images/aishu.png";
 import design from "./images/design.png";
 import consulting from "./images/consulting.png";
 import code from "./images/code.png";
+import web1 from "./images/web1.png";
+import web2 from "./images/web2.png";
+import web3 from "./images/web3.png";
+import web4 from "./images/web4.png";
+import web5 from "./images/web5.png";
+import web6 from "./images/web6.png";
+import { useState } from 'react';
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div>
-      <main className="px-10">
+    <div className={darkMode? 'dark' : ''}>
+      <main className="bg-white dark:bg-black px-10 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <nav className='py-10 mb-12 flex justify-between'>
-            <h1 className="text-xl font-burtons">developed_by_as</h1>
+            <h1 className="text-xl font-burtons dark:text-white">developed_by_as</h1>
             <ul className="flex items-center">
-              <li>
-                <BsFillMoonStarsFill className="cursor-pointer text-xl"/>
-              </li>
+            <li>
+              <BsFillMoonStarsFill 
+                onClick={() => setDarkMode(!darkMode)} 
+                className={`cursor-pointer text-xl ${darkMode ? 'text-white' : 'text-black'}`} 
+              />
+            </li>
+
               {/* <li>
                 <BsFillSunFill className="cursor-pointer text-2xl"/>
               </li> */}
@@ -26,9 +38,9 @@ export default function Home() {
             </ul>
           </nav>
           <div className='text-center p-10'>
-            <h2 className="text-5xl py-3 text-teal-600 font-medium">Aishwarya Shree</h2>
-            <h3 className='text-2xl py-2'>Software Engineer and Student</h3>
-            <p className='text-md py-5 leading-8 text-gray-800 dark:text-gray-200'>
+            <h2 className="text-5xl py-3 text-teal-600 font-medium md:text-6xl">Aishwarya Shree</h2>
+            <h3 className='text-2xl py-2 md:text-3xl dark:text-white'>Software Engineer and Student</h3>
+            <p className='text-md py-5 leading-8 text-gray-800 dark:text-gray-200 md:text-xl max-w-xl mx-auto'>
               Final year software engineering student at TCE with a passion for developing innovative solutions. Skilled in web development, problem-solving, and constantly exploring new technologies.
             </p>
           </div>
@@ -37,77 +49,75 @@ export default function Home() {
             <AiFillTwitterCircle/>
             <AiFillInstagram/>
           </div>
-          <div className='relative mx-auto bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full w-80 h-80 mt-20  overflow-hidden'>
+          <div className='relative mx-auto bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full w-80 h-80 mt-10 overflow-hidden md:h-96 md:w-96'>
                 <Image src={aishu} layout='fill' objectFit='cover'/>
           </div>
         </section>
 
         <section>
           <div>
-            <h3 className='text-3xl py-1'>Services I offer</h3>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-800">
+            <h3 className='text-3xl mt-10 py-1 dark:text-white'>Services I offer</h3>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
               Translations: Can you help translate this site into a foreign language ? Please email us with details if you can help.
               <span className='text-teal-500'> Hi have currently been selected to do internship at JMAN company.</span> It was through a college placement process. Totally 4 members from our college out of all the students from different departments have been selected.
               <span className='text-teal-500'> I am set to purse my first career at JMAN after the successful completion of my internship. </span>
               I hope I do well at the internship so that they will convert me as a full-time employee.
             </p>
           </div>
-          <div>
-            <div className='text-center shadow-lg p-10 rounded-xl my-10'>
+          <div className='lg:flex gap-10'>
+            <div className='text-center shadow-lg dark:shadow-gray-900 p-10 rounded-xl my-10'>
               <Image src={design} width={100} height={100} className='mx-auto'/>
-              <h3 className='text-lg font-medium pt-8 pb-2'>Beautiful Designs</h3>
-              <p className='py-2'>
+              <h3 className='text-lg font-medium pt-8 pb-2 dark:text-white'>Beautiful Designs</h3>
+              <p className='py-2 dark:text-white'>
                 Creating elegant designs using design theory.
               </p>
               <h4 className='py-4 text-teal-600'>Design tools I use</h4>
-              <p className='text-gray-800 py-1'>Illustrator</p>
-              <p className='text-gray-800 py-1'>Figma</p>
-              <p className='text-gray-800 py-1'>Photoshop</p>
+              <p className='text-gray-800 py-1 dark:text-gray-200'>Illustrator</p>
+              <p className='text-gray-800 py-1 dark:text-gray-200'>Figma</p>
+              <p className='text-gray-800 py-1 dark:text-gray-200'>Photoshop</p>
             </div>
-            <div className='text-center shadow-lg p-10 rounded-xl my-10'>
+            <div className='text-center shadow-lg dark:shadow-gray-900 p-10 rounded-xl my-10'>
               <Image src={code} width={100} height={100} className='mx-auto'/>
-              <h3 className='text-lg font-medium pt-8 pb-2'>Beautiful Designs</h3>
-              <p className='py-2'>
+              <h3 className='text-lg font-medium pt-8 pb-2 dark:text-white'>Beautiful Designs</h3>
+              <p className='py-2 dark:text-white'>
                 Creating elegant designs using design theory.
               </p>
               <h4 className='py-4 text-teal-600'>Design tools I use</h4>
-              <p className='text-gray-800 py-1'>Illustrator</p>
-              <p className='text-gray-800 py-1'>Figma</p>
-              <p className='text-gray-800 py-1'>Photoshop</p>
+              <p className='text-gray-800 py-1 dark:text-gray-200'>Illustrator</p>
+              <p className='text-gray-800 py-1 dark:text-gray-200'>Figma</p>
+              <p className='text-gray-800 py-1 dark:text-gray-200'>Photoshop</p>
             </div>
-            <div className='text-center shadow-lg p-10 rounded-xl my-10'>
+            <div className='text-center shadow-lg dark:shadow-gray-900 p-10 rounded-xl my-10'>
               <Image src={consulting} width={100} height={100} className='mx-auto'/>
-              <h3 className='text-lg font-medium pt-8 pb-2'>Beautiful Designs</h3>
-              <p className='py-2'>
+              <h3 className='text-lg font-medium pt-8 pb-2 dark:text-white'>Beautiful Designs</h3>
+              <p className='py-2 dark:text-white'>
                 Creating elegant designs using design theory.
               </p>
               <h4 className='py-4 text-teal-600'>Design tools I use</h4>
-              <p className='text-gray-800 py-1'>Illustrator</p>
-              <p className='text-gray-800 py-1'>Figma</p>
-              <p className='text-gray-800 py-1'>Photoshop</p>
-            </div>
-            <div className='text-center shadow-lg p-10 rounded-xl my-10'>
-              <Image src={design} width={100} height={100} className='mx-auto'/>
-              <h3 className='text-lg font-medium pt-8 pb-2'>Beautiful Designs</h3>
-              <p className='py-2'>
-                Creating elegant designs using design theory.
-              </p>
-              <h4 className='py-4 text-teal-600'>Design tools I use</h4>
-              <p className='text-gray-800 py-1'>Illustrator</p>
-              <p className='text-gray-800 py-1'>Figma</p>
-              <p className='text-gray-800 py-1'>Photoshop</p>
+              <p className='text-gray-800 py-1 dark:text-gray-200'>Illustrator</p>
+              <p className='text-gray-800 py-1 dark:text-gray-200'>Figma</p>
+              <p className='text-gray-800 py-1 dark:text-gray-200'>Photoshop</p>
             </div>
           </div>
         </section>
         <section>
           <div>
-            <h3 className='text-3xl py-1'>Portfolio</h3>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-800">
+            <h3 className='text-3xl py-1 dark:text-white'>Portfolio</h3>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
               Translations: Can you help translate this site into a foreign language ? Please email us with details if you can help.
               <span className='text-teal-500'> Hi have currently been selected to do internship at JMAN company.</span> It was through a college placement process. Totally 4 members from our college out of all the students from different departments have been selected.
               <span className='text-teal-500'> I am set to purse my first career at JMAN after the successful completion of my internship. </span>
               I hope I do well at the internship so that they will convert me as a full-time employee.
             </p>
+          </div>
+          <div className='flex flex-col gap-10 py-10 md:flex-row md:flex-wrap lg:flex-row lg:flex-wrap'>
+            {/* basis-1/2 means give the element 50%of it's width */}
+            <div className='mt-1 basis-1/3 flex-1'><Image src={web1} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
+            <div className='mt-3 basis-1/3 flex-1'><Image src={web2} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
+            <div className='mt-3 basis-1/3 flex-1'><Image src={web3} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
+            <div className='mt-3 basis-1/3 flex-1'><Image src={web4} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
+            <div className='mt-3 basis-1/3 flex-1'><Image src={web5} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
+            <div className='mt-3 basis-1/3 flex-1'><Image src={web6} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
           </div>
         </section>
       </main>
