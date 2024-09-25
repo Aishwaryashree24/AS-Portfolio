@@ -1,7 +1,7 @@
 'use client'; // useState only works in a client component. so it is advisable to include it
 
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
-import {AiFillTwitterCircle, AiFillLinkedin, AiFillInstagram} from "react-icons/ai";
+import { AiFillMail, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 import Image from "next/image";
 import aishu from "./images/aishu.png";
 import design from "./images/design.png";
@@ -14,6 +14,7 @@ import web4 from "./images/web4.png";
 import web5 from "./images/web5.png";
 import web6 from "./images/web6.png";
 import { useState } from 'react';
+import Navigation from "./Navigation/Navigation";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,19 +23,29 @@ export default function Home() {
       <main className="bg-white dark:bg-black px-10 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <nav className='py-10 mb-12 flex justify-between'>
-            <h1 className="text-xl font-burtons dark:text-white">developed_by_as</h1>
+            <h1 className="text-2xl font-burtons dark:text-white">developed_by_as</h1>
             <ul className="flex items-center">
             <li>
-              <BsFillMoonStarsFill 
-                onClick={() => setDarkMode(!darkMode)} 
-                className={`cursor-pointer text-xl ${darkMode ? 'text-white' : 'text-black'}`} 
-              />
+              {darkMode ? (
+                <BsFillSunFill 
+                  onClick={() => setDarkMode(!darkMode)}
+                  className='cursor-pointer text-xl text-yellow-500'
+                />
+              ) : (
+                <BsFillMoonStarsFill 
+                  onClick={() => setDarkMode(!darkMode)}
+                  className='cursor-pointer text-xl text-black'
+                />
+              )}
+              
             </li>
-
-              {/* <li>
-                <BsFillSunFill className="cursor-pointer text-2xl"/>
-              </li> */}
-              <li><a className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8" href="#">Resume</a></li>
+            <li>
+              <a 
+                className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8" 
+                href={`/resume?darkMode=${darkMode ? 'true' : 'false'}`}>
+                Resume
+              </a>
+            </li>
             </ul>
           </nav>
           <div className='text-center p-10'>
@@ -45,9 +56,9 @@ export default function Home() {
             </p>
           </div>
           <div className='text-5xl flex justify-center gap-16 py-3 text-gray-800 dark:text-gray-200'>
-            <AiFillLinkedin />
-            <AiFillTwitterCircle/>
-            <AiFillInstagram/>
+            <a href="https://www.linkedin.com/in/aishwarya-shree-803376204/" target="_blank" rel="noopener noreferrer"><AiFillLinkedin /></a>
+            <a href="https://www.instagram.com/aishwaryashreo/?next=%2F" target='_blank' rel='noopener noreferrer'><AiFillInstagram /></a>
+            <a href='mailto:aishwaryashree826@gmail.com'><AiFillMail /></a>
           </div>
           <div className='relative mx-auto bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full w-80 h-80 mt-10 overflow-hidden md:h-96 md:w-96'>
                 <Image src={aishu} layout='fill' objectFit='cover'/>
@@ -120,6 +131,7 @@ export default function Home() {
             <div className='mt-3 basis-1/3 flex-1'><Image src={web6} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
           </div>
         </section>
+        <Navigation darkMode={darkMode} />
       </main>
     </div>
   );

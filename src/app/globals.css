@@ -30,3 +30,30 @@ body {
   font-family: "burtons";
   src: url("./fonts/Burtons.otf");
 }
+
+/* Add this to your globals.css or a relevant CSS file */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.2); /* Light background with transparency */
+  border-radius: 1rem; /* Rounded corners */
+  backdrop-filter: blur(10px); /* Blur effect for the glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Slight white border */
+}
+
+.shadow-custom {
+  position: relative;
+  z-index: 0; /* Ensure the shadow is beneath the content */
+}
+
+.shadow-custom::before {
+  content: "";
+  position: absolute;
+  top: -15px; /* Adjust as needed */
+  left: -15px; /* Adjust as needed */
+  right: -15px; /* Adjust as needed */
+  bottom: -15px; /* Adjust as needed */
+  border-radius: 1rem; /* Match the border-radius of the main div */
+  background: linear-gradient(to bottom right, rgba(6, 182, 212, 0.6), rgba(20, 184, 166, 0.6)); /* Gradient from cyan to teal */
+  filter: blur(20px); /* Increase blur for a softer shadow */
+  z-index: -1; /* Place it behind the main content */
+}
+
