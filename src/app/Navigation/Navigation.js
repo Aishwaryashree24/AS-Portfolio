@@ -6,13 +6,13 @@ const Navigation = ({ darkMode }) => {
     <div className="fixed bottom-0 left-0 right-0 flex justify-center p-4">
       <div className="glass-effect rounded-lg shadow-lg p-4 w-full max-w-lg">
         <nav className="flex justify-around">
-          <Link href="/" className={`text-xl ${darkMode ? 'text-white' : 'text-black'} hover:text-teal-500`}>
+          <Link href="/" className={`text-xl ${darkMode ? 'text-white' : 'text-black'} hover:text-white`}>
             Home
           </Link>
-          <Link href="/resume" className={`text-xl ${darkMode ? 'text-white' : 'text-black'} hover:text-teal-500`}>
+          <Link href="/resume" className={`text-xl ${darkMode ? 'text-white' : 'text-black'} hover:text-white`}>
             Resume
           </Link>
-          <Link href="/about" className={`text-xl ${darkMode ? 'text-white' : 'text-black'} hover:text-teal-500`}>
+          <Link href="/about" className={`text-xl ${darkMode ? 'text-white' : 'text-black'} hover:text-white`}>
             About
           </Link>
         </nav>

@@ -1,7 +1,7 @@
 'use client'; // useState only works in a client component. so it is advisable to include it
 
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
-import { AiFillMail, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
+import { AiFillMail, AiFillLinkedin, AiFillInstagram, AiFillGithub } from "react-icons/ai";
 import Image from "next/image";
 import aishu from "./images/aishu.png";
 import design from "./images/design.png";
@@ -25,16 +25,16 @@ export default function Home() {
           <nav className='py-10 mb-12 flex justify-between'>
             <h1 className="text-2xl font-burtons dark:text-white">developed_by_as</h1>
             <ul className="flex items-center">
-            <li>
+            <li className="inline-block transform transition-transform duration-300 hover:scale-125">
               {darkMode ? (
                 <BsFillSunFill 
                   onClick={() => setDarkMode(!darkMode)}
-                  className='cursor-pointer text-xl text-yellow-500'
+                  className='cursor-pointer text-xl text-yellow-500 size={50}'
                 />
               ) : (
                 <BsFillMoonStarsFill 
                   onClick={() => setDarkMode(!darkMode)}
-                  className='cursor-pointer text-xl text-black'
+                  className='cursor-pointer text-xl text-black size={50}'
                 />
               )}
               
@@ -56,9 +56,10 @@ export default function Home() {
             </p>
           </div>
           <div className='text-5xl flex justify-center gap-16 py-3 text-gray-800 dark:text-gray-200'>
-            <a href="https://www.linkedin.com/in/aishwarya-shree-803376204/" target="_blank" rel="noopener noreferrer"><AiFillLinkedin /></a>
-            <a href="https://www.instagram.com/aishwaryashreo/?next=%2F" target='_blank' rel='noopener noreferrer'><AiFillInstagram /></a>
-            <a href='mailto:aishwaryashree826@gmail.com'><AiFillMail /></a>
+            <a href="https://www.linkedin.com/in/aishwarya-shree-803376204/" target="_blank" rel="noopener noreferrer" className="inline-block transform transition-transform duration-300 hover:scale-125"><AiFillLinkedin size={50}/></a>
+            <a href="https://github.com/Aishwaryashree24" target="_blank" rel="noopener noreferrer" className="inline-block transform transition-transform duration-300 hover:scale-125"><AiFillGithub size={50}/></a>
+            <a href='mailto:aishwaryashree826@gmail.com' className="inline-block transform transition-transform duration-300 hover:scale-125"><AiFillMail size={50}/></a>
+            <a href="https://www.instagram.com/aishwaryashreo/?next=%2F" target='_blank' rel='noopener noreferrer' className="inline-block transform transition-transform duration-300 hover:scale-125"><AiFillInstagram size={50}/></a>
           </div>
           <div className='relative mx-auto bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full w-80 h-80 mt-10 overflow-hidden md:h-96 md:w-96'>
                 <Image src={aishu} layout='fill' objectFit='cover'/>

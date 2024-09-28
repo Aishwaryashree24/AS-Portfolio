@@ -8,21 +8,9 @@ import aish_resume from "./resume.png";
 import { BsArrowLeft } from "react-icons/bs";
 
 export default function Resume() {
-  const router = useRouter(); // Initialize the router
-  const { query } = router; // Get query parameters
-  const [darkMode, setDarkMode] = useState(false); // State for dark mode
-
-  useEffect(() => {
-    // Check if darkMode parameter is present in the query
-    if (query.darkMode === 'true') {
-      setDarkMode(true);
-    } else {
-      setDarkMode(false);
-    }
-  }, [query.darkMode]);
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-black' : 'bg-white'} flex justify-center items-center relative`}>
+    <div className={`min-h-screen bg-white flex justify-center items-center relative`}>
       <main className="max-w-full flex justify-center">
         <a 
           href="/" // Change this link to your desired back URL
