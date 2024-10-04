@@ -10,11 +10,11 @@ import { BsArrowLeft } from "react-icons/bs";
 export default function Resume() {
 
   return (
-    <div className={`min-h-screen bg-white flex justify-center items-center relative`}>
+    <div className={`min-h-screen bg-white dark:bg-black flex justify-center items-center relative`}>
       <main className="max-w-full flex justify-center">
         <a 
           href="/" // Change this link to your desired back URL
-          className="absolute top-5 left-5 text-xl bg-white rounded-full p-2 shadow-md transition hover:bg-gray-200" 
+          className="fixed top-20 left-5 z-10 text-xl bg-white rounded-full p-2 shadow-md transition hover:bg-gray-200" 
           title="Back" // Tooltip for accessibility
         >
           <BsArrowLeft />

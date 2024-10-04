@@ -34,7 +34,7 @@ body {
 /* Add this to your globals.css or a relevant CSS file */
 .glass-effect {
   background: rgba(2, 183, 255, 0.2); /* Light background with transparency */
-  border-radius: 1rem; /* Rounded corners */
+  /* border-radius: 1rem; Rounded corners */
   backdrop-filter: blur(10px); /* Blur effect for the glass effect */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Slight white border */
 }
