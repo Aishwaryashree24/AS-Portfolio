@@ -7,12 +7,12 @@ import aishu from "./images/aishu.png";
 import design from "./images/design.png";
 import consulting from "./images/consulting.png";
 import code from "./images/code.png";
-import web1 from "./images/web1.png";
-import web2 from "./images/web2.png";
-import web3 from "./images/web3.png";
-import web4 from "./images/web4.png";
-import web5 from "./images/web5.png";
-import web6 from "./images/web6.png";
+// import web1 from "./images/web1.png";
+// import web2 from "./images/web2.png";
+// import web3 from "./images/web3.png";
+// import web4 from "./images/web4.png";
+// import web5 from "./images/web5.png";
+// import web6 from "./images/web6.png";
 import { useState } from 'react';
 import Navigation from "./Navigation/Navigation";
 
@@ -122,15 +122,15 @@ export default function Home() {
               I hope I do well at the internship so that they will convert me as a full-time employee.
             </p>
           </div>
-          <div className='flex flex-col gap-10 py-10 md:flex-row md:flex-wrap lg:flex-row lg:flex-wrap'>
-            {/* basis-1/2 means give the element 50%of it's width */}
+          {/* <div className='flex flex-col gap-10 py-10 md:flex-row md:flex-wrap lg:flex-row lg:flex-wrap'>
+            basis-1/2 means give the element 50%of it's width
             <div className='mt-1 basis-1/3 flex-1'><Image src={web1} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
             <div className='mt-3 basis-1/3 flex-1'><Image src={web2} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
             <div className='mt-3 basis-1/3 flex-1'><Image src={web3} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
             <div className='mt-3 basis-1/3 flex-1'><Image src={web4} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
             <div className='mt-3 basis-1/3 flex-1'><Image src={web5} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
             <div className='mt-3 basis-1/3 flex-1'><Image src={web6} className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' /></div>
-          </div>
+          </div> */}
         </section>
         <Navigation darkMode={darkMode} />
       </main>
